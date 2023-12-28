@@ -1,13 +1,13 @@
 import NoteItem from "./NoteItem";
+import { useAppSelector } from "../app/hooks";
 
-const NoteList = () => {
+const NoteList: React.FC = () => {
+  const items = useAppSelector((state) => state.notes.notes);
   return (
-    <div className="mt-5 w-full rounded flex justify-center items-center flex-wrap">
-      <NoteItem />
-      <NoteItem />
-      <NoteItem />
-      <NoteItem />
-      <NoteItem />
+    <div className="mt-5 w-full sm:w-[650px] mx-auto rounded flex justify-center items-center flex-wrap">
+      {items.map((item) => (
+        <NoteItem key={item.id} item={item} />
+      ))}
     </div>
   );
 };
