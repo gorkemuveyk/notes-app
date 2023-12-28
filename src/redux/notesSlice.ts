@@ -25,9 +25,9 @@ const initialActiveColor = storedActiveColor
 const initialState: NotesState = {
   notes: allItems
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    .filter(([key, value]) => key.includes("note"))
+    .filter(([key, _]) => key.includes("note"))
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    .map(([key, value]) => JSON.parse(value)),
+    .map(([_, value]) => JSON.parse(value)),
   activeColor: initialActiveColor,
   colors: ["#11009E", "#BF3131", "#200E3A", "#FB8B24", "#65B741"],
   color: 0,
