@@ -1,4 +1,8 @@
-# Live Demo
+## Nodes App
+
+Color the tasks you will do and add them to the system. Search through tasks and delete tasks if necessary.
+
+## Live Demo
 
 [https://notes-app-seven-ruby.vercel.app/](https://notes-app-seven-ruby.vercel.app/)
 
@@ -10,12 +14,12 @@
   <img src="public/img/laptop.png" alt="Resim 3" width="80%">
 </div>
 
-# Installation
+## Installation
 
 #### Clone
 
 ```
-git clone https://github.com/gorkemuveyk/e-commerce-react.git
+https://github.com/gorkemuveyk/notes-app.git
 ```
 
 #### Package Installation
