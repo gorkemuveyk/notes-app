@@ -12,6 +12,7 @@ interface NotesState {
   activeColor: number;
   colors: string[];
   color: number;
+  filteredItem: string;
 }
 
 const allItems = Object.entries(localStorage) || [];
@@ -30,7 +31,8 @@ const initialState: NotesState = {
   activeColor: initialActiveColor,
   colors: ["#11009E", "#BF3131", "#200E3A", "#FB8B24", "#65B741"],
   color: 0,
-  edit: false,
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  filteredItem: "",
 };
 
 localStorage.setItem("activeColor", JSON.stringify(initialState.activeColor));
@@ -59,10 +61,16 @@ export const notesSlice = createSlice({
       state.activeColor = action.payload;
       localStorage.setItem("activeColor", JSON.stringify(state.activeColor));
     },
+
+    searchItem: (state, action) => {
+      state.filteredItem = action.payload.toLocaleLowerCase("tr-TR");
+    },
   },
 });
 
 export const useColors = (state: RootState) => state.notes.colors;
 export const useActiveColor = (state: RootState) => state.notes.activeColor;
-export const { addNote, deleteNote, changeColor } = notesSlice.actions;
+export const useNotes = (state: RootState) => state.notes.notes;
+export const { addNote, deleteNote, changeColor, searchItem } =
+  notesSlice.actions;
 export default notesSlice.reducer;
