@@ -19,7 +19,7 @@ Color the tasks you will do and add them to the system. Search through tasks and
 #### Clone
 
 ```
-https://github.com/gorkemuveyk/notes-app.git
+git clone https://github.com/gorkemuveyk/notes-app.git
 ```
 
 #### Package Installation
